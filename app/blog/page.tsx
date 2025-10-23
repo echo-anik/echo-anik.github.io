@@ -43,11 +43,9 @@ export default function BlogPage() {
         ) : (
           <div className="space-y-8">
             {posts.map((post) => (
-              <article key={post.id} className="card hover:scale-[1.01] transition-transform">
+              <article key={post.id} className="card">
                 <h2 className="text-3xl font-bold text-text-primary mb-3">
-                  <Link href={`/blog/${post.id}`} className="hover:text-midnight-indigo-light transition-colors">
-                    {post.title}
-                  </Link>
+                  {post.title}
                 </h2>
                 
                 <p className="text-sm text-text-tertiary mb-4">
@@ -62,9 +60,13 @@ export default function BlogPage() {
                   {post.excerpt}
                 </p>
 
-                <Link href={`/blog/${post.id}`} className="btn-secondary inline-block">
-                  Read More →
-                </Link>
+                <div className="prose prose-invert max-w-none">
+                  {post.content.split('\n\n').map((paragraph, idx) => (
+                    <p key={idx} className="mb-4 text-text-secondary">
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
               </article>
             ))}
           </div>
