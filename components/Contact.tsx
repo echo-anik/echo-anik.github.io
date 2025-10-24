@@ -14,7 +14,7 @@ export default function Contact() {
       name: 'LinkedIn',
       icon: FaLinkedin,
       handle: 'Anik Khandokar',
-      url: 'https://www.linkedin.com/in/anik-khandokar-261967270/',
+      url: 'https://www.linkedin.com/in/khandaker-anik-261967270/',
       color: 'from-blue-600 to-blue-800',
       description: 'Connect professionally'
     },
