@@ -11,7 +11,7 @@ export default function Hero() {
   ]
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center pt-20 px-6">
+    <section id="home" className="min-h-screen flex items-center justify-center px-6">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center space-y-6">
           <div className="mb-8">
