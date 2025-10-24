@@ -91,7 +91,7 @@ export default function Hero() {
               <FaGithub />
             </a>
             <a
-              href="https://www.linkedin.com/in/anik-khandokar-261967270/"
+              href="https://www.linkedin.com/in/khandaker-anik-261967270/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-3xl text-text-secondary hover:text-midnight-indigo-light transition-colors"
