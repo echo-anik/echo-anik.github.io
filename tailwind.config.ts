@@ -6,6 +6,7 @@ const config: Config = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -18,6 +19,17 @@ const config: Config = {
           indigo: '#3b8fb5',
           'indigo-light': '#5ba8c9',
           'indigo-pale': '#7fc4dc',
+        },
+        light: {
+          base: '#fff8f0',
+          peach: '#ffb699',
+          'peach-light': 'rgba(255, 182, 153, 0.3)',
+          cream: '#fff4d6',
+          'cream-light': 'rgba(255, 244, 214, 0.5)',
+          coral: '#ff9980',
+          'coral-dark': '#e67a66',
+          accent: '#cc7a66',
+          'accent-dark': '#b36b59',
         },
         text: {
           primary: '#e8f4f8',
