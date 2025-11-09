@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import MouseTracker from '@/components/MouseTracker'
+import { ThemeProvider } from '@/contexts/ThemeContext'
 
 export const metadata: Metadata = {
   title: 'Khandoker Wahiduzzaman Anik - Full Stack Developer & ML Researcher',
@@ -22,8 +23,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="midnight-bg">
-        <MouseTracker />
-        {children}
+        <ThemeProvider>
+          <MouseTracker />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   )

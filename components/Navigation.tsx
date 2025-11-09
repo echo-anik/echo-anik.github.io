@@ -3,12 +3,14 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Dock, DockIcon, DockItem, DockLabel } from '@/components/core/dock'
-import { Home, User, Briefcase, Code, BookOpen, Mail, Menu, X } from 'lucide-react'
+import { Home, User, Briefcase, Code, BookOpen, Mail, Menu, X, Sun, Moon } from 'lucide-react'
+import { useTheme } from '@/contexts/ThemeContext'
 
 export default function Navigation() {
   const [isVisible, setIsVisible] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const { theme, toggleTheme } = useTheme()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,18 +51,31 @@ export default function Navigation() {
           isVisible ? 'translate-y-0 opacity-100' : '-translate-y-32 opacity-0'
         }`}
       >
-        <div className="bg-midnight-base/80 backdrop-blur-md border border-midnight-indigo/30 rounded-2xl shadow-lg shadow-midnight-indigo/20 p-2">
+        <div className="bg-midnight-base/80 dark:bg-midnight-base/80 light:bg-light-cream/80 backdrop-blur-md border border-midnight-indigo/30 dark:border-midnight-indigo/30 light:border-light-accent/30 rounded-2xl shadow-lg shadow-midnight-indigo/20 dark:shadow-midnight-indigo/20 light:shadow-light-accent/20 p-2">
           <Dock className="items-center">
             {navItems.map((item, idx) => (
               <a key={idx} href={item.href}>
-                <DockItem className="group aspect-square rounded-full bg-midnight-ocean/20 hover:bg-midnight-ocean/40 backdrop-blur-md border border-midnight-indigo/30 hover:border-midnight-indigo-light transition-all">
+                <DockItem className="group aspect-square rounded-full bg-midnight-ocean/20 dark:bg-midnight-ocean/20 light:bg-light-peach-light hover:bg-midnight-ocean/40 dark:hover:bg-midnight-ocean/40 light:hover:bg-light-cream-light backdrop-blur-md border border-midnight-indigo/30 dark:border-midnight-indigo/30 light:border-light-accent/30 hover:border-midnight-indigo-light dark:hover:border-midnight-indigo-light light:hover:border-light-coral transition-all">
                   <DockLabel>{item.title}</DockLabel>
                   <DockIcon>
-                    <item.icon className="h-6 w-6 text-midnight-indigo-light group-hover:text-midnight-indigo-pale transition-colors" />
+                    <item.icon className="h-6 w-6 text-midnight-indigo-light dark:text-midnight-indigo-light light:text-light-accent group-hover:text-midnight-indigo-pale dark:group-hover:text-midnight-indigo-pale light:group-hover:text-light-coral-dark transition-colors" />
                   </DockIcon>
                 </DockItem>
               </a>
             ))}
+            {/* Theme Toggle Button */}
+            <button onClick={toggleTheme}>
+              <DockItem className="group aspect-square rounded-full bg-midnight-ocean/20 dark:bg-midnight-ocean/20 light:bg-light-peach-light hover:bg-midnight-ocean/40 dark:hover:bg-midnight-ocean/40 light:hover:bg-light-cream-light backdrop-blur-md border border-midnight-indigo/30 dark:border-midnight-indigo/30 light:border-light-accent/30 hover:border-midnight-indigo-light dark:hover:border-midnight-indigo-light light:hover:border-light-coral transition-all">
+                <DockLabel>{theme === 'dark' ? 'Light Mode' : 'Dark Mode'}</DockLabel>
+                <DockIcon>
+                  {theme === 'dark' ? (
+                    <Sun className="h-6 w-6 text-midnight-indigo-light group-hover:text-midnight-indigo-pale transition-colors" />
+                  ) : (
+                    <Moon className="h-6 w-6 text-light-accent group-hover:text-light-coral-dark transition-colors" />
+                  )}
+                </DockIcon>
+              </DockItem>
+            </button>
           </Dock>
         </div>
       </nav>
@@ -70,21 +85,21 @@ export default function Navigation() {
         {/* Hamburger Button */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className={`fixed top-4 right-4 z-50 p-3 bg-midnight-base/80 backdrop-blur-md border border-midnight-indigo/30 rounded-full shadow-lg transition-all duration-500 ${
+          className={`fixed top-4 right-4 z-50 p-3 bg-midnight-base/80 dark:bg-midnight-base/80 light:bg-light-cream/80 backdrop-blur-md border border-midnight-indigo/30 dark:border-midnight-indigo/30 light:border-light-accent/30 rounded-full shadow-lg transition-all duration-500 ${
             isVisible ? 'translate-y-0 opacity-100' : '-translate-y-32 opacity-0'
           }`}
           aria-label="Toggle menu"
         >
           {isMobileMenuOpen ? (
-            <X className="h-6 w-6 text-midnight-indigo-light" />
+            <X className="h-6 w-6 text-midnight-indigo-light dark:text-midnight-indigo-light light:text-light-accent" />
           ) : (
-            <Menu className="h-6 w-6 text-midnight-indigo-light" />
+            <Menu className="h-6 w-6 text-midnight-indigo-light dark:text-midnight-indigo-light light:text-light-accent" />
           )}
         </button>
 
         {/* Mobile Side Menu */}
         <div
-          className={`fixed top-0 right-0 h-full w-64 bg-midnight-base/95 backdrop-blur-md border-l border-midnight-indigo/30 shadow-2xl z-40 transition-transform duration-300 ${
+          className={`fixed top-0 right-0 h-full w-64 bg-midnight-base/95 dark:bg-midnight-base/95 light:bg-light-base/95 backdrop-blur-md border-l border-midnight-indigo/30 dark:border-midnight-indigo/30 light:border-light-accent/30 shadow-2xl z-40 transition-transform duration-300 ${
             isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
@@ -94,14 +109,35 @@ export default function Navigation() {
                 key={idx}
                 href={item.href}
                 onClick={handleNavClick}
-                className="flex items-center gap-4 p-4 rounded-lg bg-midnight-ocean/20 hover:bg-midnight-ocean/40 border border-midnight-indigo/30 hover:border-midnight-indigo-light transition-all group"
+                className="flex items-center gap-4 p-4 rounded-lg bg-midnight-ocean/20 dark:bg-midnight-ocean/20 light:bg-light-peach-light hover:bg-midnight-ocean/40 dark:hover:bg-midnight-ocean/40 light:hover:bg-light-cream-light border border-midnight-indigo/30 dark:border-midnight-indigo/30 light:border-light-accent/30 hover:border-midnight-indigo-light dark:hover:border-midnight-indigo-light light:hover:border-light-coral transition-all group"
               >
-                <item.icon className="h-6 w-6 text-midnight-indigo-light group-hover:text-midnight-indigo-pale transition-colors" />
-                <span className="text-lg text-text-primary group-hover:text-midnight-indigo-pale transition-colors">
+                <item.icon className="h-6 w-6 text-midnight-indigo-light dark:text-midnight-indigo-light light:text-light-accent group-hover:text-midnight-indigo-pale dark:group-hover:text-midnight-indigo-pale light:group-hover:text-light-coral-dark transition-colors" />
+                <span className="text-lg text-text-primary dark:text-text-primary light:text-[#2d1810] group-hover:text-midnight-indigo-pale dark:group-hover:text-midnight-indigo-pale light:group-hover:text-light-coral-dark transition-colors">
                   {item.title}
                 </span>
               </a>
             ))}
+            {/* Theme Toggle Button */}
+            <button
+              onClick={toggleTheme}
+              className="flex items-center gap-4 p-4 rounded-lg bg-midnight-ocean/20 dark:bg-midnight-ocean/20 light:bg-light-peach-light hover:bg-midnight-ocean/40 dark:hover:bg-midnight-ocean/40 light:hover:bg-light-cream-light border border-midnight-indigo/30 dark:border-midnight-indigo/30 light:border-light-accent/30 hover:border-midnight-indigo-light dark:hover:border-midnight-indigo-light light:hover:border-light-coral transition-all group"
+            >
+              {theme === 'dark' ? (
+                <>
+                  <Sun className="h-6 w-6 text-midnight-indigo-light group-hover:text-midnight-indigo-pale transition-colors" />
+                  <span className="text-lg text-text-primary group-hover:text-midnight-indigo-pale transition-colors">
+                    Light Mode
+                  </span>
+                </>
+              ) : (
+                <>
+                  <Moon className="h-6 w-6 text-light-accent group-hover:text-light-coral-dark transition-colors" />
+                  <span className="text-lg text-[#2d1810] group-hover:text-light-coral-dark transition-colors">
+                    Dark Mode
+                  </span>
+                </>
+              )}
+            </button>
           </div>
         </div>
 
