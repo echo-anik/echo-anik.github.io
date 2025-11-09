@@ -13,7 +13,7 @@ export default function Projects() {
         'Successfully deployed and serving users nationwide with 99.9% uptime'
       ],
       tech: ['PHP', 'Laravel', 'MySQL', 'Bootstrap', 'JavaScript', 'REST API'],
-      duration: 'October 2022 - Present'
+      duration: 'October 2025 - Present'
     },
     {
       title: 'TravelEase - Tourism Platform',
@@ -27,7 +27,7 @@ export default function Projects() {
         'Real-time booking system with inventory management'
       ],
       tech: ['Node.js', 'Express.js', 'Angular', 'MongoDB', 'Machine Learning'],
-      duration: 'October 2022 - Ongoing'
+      duration: 'October 2024 - Ongoing'
     },
     {
       title: 'Bookwork E-Store',
@@ -41,7 +41,7 @@ export default function Projects() {
         'Secure payment integration'
       ],
       tech: ['PHP', 'Laravel', 'MySQL', 'Bootstrap', 'Payment Gateway'],
-      duration: '2023'
+      duration: '2024'
     },
     {
       title: 'ML-Based IDS for IIoT (Thesis)',
@@ -69,7 +69,7 @@ export default function Projects() {
         'Published in academic journal'
       ],
       tech: ['Python', 'XGBoost', 'Scikit-learn', 'TensorFlow', 'Data Analysis'],
-      duration: 'May - October 2021'
+      duration: 'January-April 2025'
     }
   ]
 
