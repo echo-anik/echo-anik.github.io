@@ -207,9 +207,9 @@ html {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 20% 80%, rgba(255, 182, 153, 0.3) 0%, transparent 50%),
-              radial-gradient(circle at 80% 20%, rgba(255, 244, 214, 0.5) 0%, transparent 50%),
-              radial-gradient(circle at 40% 40%, rgba(255, 182, 153, 0.1) 0%, transparent 50%);
+  background: radial-gradient(70% 55% at 50% 50%, rgba(255, 182, 153, 0.35) 0%, rgba(255, 200, 170, 0.25) 18%, rgba(255, 220, 190, 0.15) 34%, rgba(255, 235, 210, 0.08) 50%, rgba(255, 244, 220, 0.04) 66%, transparent 80%),
+              radial-gradient(160% 130% at 10% 10%, rgba(0,0,0,0) 38%, rgba(255, 182, 153, 0.05) 76%, rgba(255, 200, 170, 0.02) 100%),
+              radial-gradient(160% 130% at 90% 90%, rgba(0,0,0,0) 38%, rgba(255, 244, 214, 0.08) 76%, rgba(255, 235, 205, 0.03) 100%);
   z-index: 0;
   pointer-events: none;
   transition: all 0.3s ease;
@@ -231,8 +231,8 @@ html {
 }
 
 .light .midnight-bg::after {
-  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 100%), rgba(255, 182, 153, 0.2) 0%, transparent 40%),
-              radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 100%), rgba(255, 244, 214, 0.3) 0%, transparent 50%);
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 100%), rgba(255, 150, 120, 0.25) 0%, transparent 40%),
+              radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 100%), rgba(255, 220, 180, 0.35) 0%, transparent 50%);
 }
 
 .midnight-bg:hover::after {
