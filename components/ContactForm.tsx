@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { FaPaperPlane } from 'react-icons/fa'
+import { saveMessage } from '@/lib/messageStorage'
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -15,13 +16,16 @@ export default function ContactForm() {
     e.preventDefault()
     setStatus('sending')
 
-    // Fallback to mailto since form service is not configured
-    const mailtoLink = `mailto:wahiduzzamananik782@gmail.com?subject=Message from ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(`From: ${formData.email}\n\nMessage:\n${formData.message}`)}`
-    window.location.href = mailtoLink
-    
-    setStatus('success')
-    setFormData({ name: '', email: '', message: '' })
-    setTimeout(() => setStatus('idle'), 3000)
+    // Save message to local storage
+    try {
+      saveMessage(formData.name, formData.email, formData.message)
+      setStatus('success')
+      setFormData({ name: '', email: '', message: '' })
+      setTimeout(() => setStatus('idle'), 5000)
+    } catch (error) {
+      setStatus('error')
+      setTimeout(() => setStatus('idle'), 5000)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -118,7 +122,7 @@ export default function ContactForm() {
         {status === 'success' && (
           <div className="text-center p-4 bg-green-500/10 border border-green-500/30 rounded-lg">
             <p className="text-green-400 font-semibold">
-              Thanks for reaching out! I'll get back to you soon.
+              Message sent successfully! I'll get back to you soon.
             </p>
           </div>
         )}
