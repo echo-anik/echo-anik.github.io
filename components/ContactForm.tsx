@@ -15,28 +15,13 @@ export default function ContactForm() {
     e.preventDefault()
     setStatus('sending')
 
-    try {
-      // Using Formspree for email handling (free tier: 50 submissions/month)
-      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      })
-
-      if (response.ok) {
-        setStatus('success')
-        setFormData({ name: '', email: '', message: '' })
-        setTimeout(() => setStatus('idle'), 5000)
-      } else {
-        setStatus('error')
-        setTimeout(() => setStatus('idle'), 5000)
-      }
-    } catch (error) {
-      setStatus('error')
-      setTimeout(() => setStatus('idle'), 5000)
-    }
+    // Fallback to mailto since form service is not configured
+    const mailtoLink = `mailto:wahiduzzamananik782@gmail.com?subject=Message from ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(`From: ${formData.email}\n\nMessage:\n${formData.message}`)}`
+    window.location.href = mailtoLink
+    
+    setStatus('success')
+    setFormData({ name: '', email: '', message: '' })
+    setTimeout(() => setStatus('idle'), 3000)
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

@@ -103,7 +103,10 @@ export default function Contact() {
         <ContactForm />
 
         <div className="text-center mt-12 text-text-tertiary">
-          <p className="mb-2">Currently based in Dhaka, Bangladesh 🇧🇩</p>
+          <p className="mb-2 flex items-center justify-center gap-2">
+            Currently based in Dhaka, Bangladesh
+            <img src="https://flagcdn.com/24x18/bd.png" alt="Bangladesh Flag" className="inline-block" width="24" height="18" />
+          </p>
           <p>&copy; 2025 Khandoker Wahiduzzaman Anik. All rights reserved.</p>
         </div>
       </div>
