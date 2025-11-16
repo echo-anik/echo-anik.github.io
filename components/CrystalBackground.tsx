@@ -22,36 +22,42 @@ export default function CrystalBackground() {
                       radial-gradient(160% 130% at 90% 90%, rgba(0,0,0,0) 38%, #000309 76%, #000208 100%);
         }
 
-        /* Light theme background (crystal maze) */
+        /* Light theme background (crystal maze - bright and airy) */
         [data-theme="light"] .theme-bg {
           background: 
             repeating-linear-gradient(
               60deg,
               transparent 0px,
               transparent 1px,
-              rgba(255, 255, 255, 0.05) 1px,
-              rgba(255, 255, 255, 0.05) 2px
+              rgba(59, 143, 181, 0.08) 1px,
+              rgba(59, 143, 181, 0.08) 2px
             ),
             repeating-linear-gradient(
               -60deg,
               transparent 0px,
               transparent 1px,
-              rgba(255, 255, 255, 0.05) 1px,
-              rgba(255, 255, 255, 0.05) 2px
+              rgba(59, 143, 181, 0.08) 1px,
+              rgba(59, 143, 181, 0.08) 2px
             ),
             linear-gradient(
-              60deg,
-              rgba(43, 108, 176, 0.4) 0%,
-              rgba(72, 126, 176, 0.4) 33%,
-              rgba(95, 142, 176, 0.4) 66%,
-              rgba(116, 157, 176, 0.4) 100%
+              135deg,
+              #f0f9ff 0%,
+              #e0f2fe 25%,
+              #bae6fd 50%,
+              #e0f2fe 75%,
+              #f0f9ff 100%
             ),
             radial-gradient(
-              circle at 50% 50%,
-              rgba(255, 255, 255, 0.2) 0%,
+              circle at 30% 30%,
+              rgba(125, 211, 252, 0.3) 0%,
+              transparent 50%
+            ),
+            radial-gradient(
+              circle at 70% 70%,
+              rgba(186, 230, 253, 0.2) 0%,
               transparent 50%
             );
-          background-blend-mode: overlay, overlay, normal, screen;
+          background-blend-mode: overlay, overlay, normal, screen, screen;
           animation: crystal-shimmer 15s ease-in-out infinite;
         }
       `}</style>

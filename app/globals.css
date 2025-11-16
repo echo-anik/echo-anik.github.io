@@ -11,16 +11,37 @@
   }
 
   [data-theme="light"] {
-    --bg-primary: #ffffff;
-    --text-primary: #1f2937;
-    --text-secondary: #4b5563;
-    --text-tertiary: #6b7280;
+    --bg-primary: #f0f9ff;
+    --text-primary: #0c4a6e;
+    --text-secondary: #075985;
+    --text-tertiary: #0369a1;
   }
 
   body {
     background-color: var(--bg-primary);
     color: var(--text-primary);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  /* Apply text colors globally */
+  [data-theme="light"] .text-text-primary {
+    color: #0c4a6e !important;
+  }
+  
+  [data-theme="light"] .text-text-secondary {
+    color: #075985 !important;
+  }
+  
+  [data-theme="light"] .text-text-tertiary {
+    color: #0369a1 !important;
+  }
+
+  [data-theme="light"] .text-midnight-indigo-light {
+    color: #0284c7 !important;
+  }
+
+  [data-theme="light"] .text-midnight-indigo-pale {
+    color: #0ea5e9 !important;
   }
 }
 
@@ -30,6 +51,14 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  [data-theme="light"] .gradient-text {
+    background: linear-gradient(135deg, #0284c7 0%, #0369a1 50%, #075985 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 600;
   }
 
   .btn-primary {
@@ -90,12 +119,29 @@
   }
 
   .card {
-    @apply bg-card backdrop-blur-sm border border-midnight-indigo/30 rounded-xl p-6 hover:border-midnight-indigo-light transition-all duration-300 hover:shadow-lg hover:shadow-midnight-indigo/20;
+    @apply rounded-xl p-6 transition-all duration-300;
     position: relative;
     overflow: hidden;
     background: rgba(24, 64, 88, 0.15);
     border: 1px solid rgba(59, 143, 181, 0.2);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .card:hover {
+    border-color: #5ba8c9;
+    box-shadow: 0 10px 30px rgba(59, 143, 181, 0.2);
+  }
+
+  [data-theme="light"] .card {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(14, 165, 233, 0.3);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+  }
+
+  [data-theme="light"] .card:hover {
+    border-color: #0ea5e9;
+    box-shadow: 0 10px 30px rgba(14, 165, 233, 0.15);
   }
 
   .card::before {
