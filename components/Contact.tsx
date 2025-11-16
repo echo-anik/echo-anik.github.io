@@ -96,7 +96,7 @@ export default function Contact() {
             ))}
           </div>
           <p className="text-text-tertiary mt-6">
-            💡 Response time: Usually within 24 hours on weekdays
+            Response time: Usually within 24 hours on weekdays
           </p>
         </div>
 

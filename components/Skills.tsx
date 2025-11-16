@@ -3,76 +3,59 @@
 export default function Skills() {
   const skillCategories = [
     {
-      title: 'Programming Languages',
-      skills: [
-        { name: 'Python', level: 80 },
-        { name: 'PHP', level: 90 },
-        { name: 'JavaScript', level: 80 },
-        { name: 'Node.js', level: 80 },
-        { name: 'C', level: 65 }
-      ]
+      title: 'Backend Development',
+      color: 'from-blue-500 to-cyan-500',
+      skills: ['PHP', 'Laravel', 'Node.js', 'Python', 'REST APIs', 'MySQL', 'MongoDB']
     },
     {
-      title: 'Frameworks & Libraries',
-      skills: [
-        { name: 'Laravel', level: 90 },
-        { name: 'React', level: 70 },
-        { name: 'Bootstrap', level: 85 },
-        { name: 'Tailwind CSS', level: 85 }
-      ]
-    },
-    {
-      title: 'Databases',
-      skills: [
-        { name: 'MongoDB', level: 80 },
-        { name: 'MySQL', level: 80 },
-        { name: 'Database Design', level: 80 }
-      ]
+      title: 'Frontend Development',
+      color: 'from-purple-500 to-pink-500',
+      skills: ['React', 'JavaScript', 'TypeScript', 'Tailwind CSS', 'Bootstrap', 'Next.js', 'Responsive Design']
     },
     {
       title: 'Machine Learning & AI',
-      skills: [
-        { name: 'Python ML', level: 80 },
-        { name: 'XGBoost', level: 85 },
-        { name: 'TensorFlow', level: 70 },
-        { name: 'Scikit-learn', level: 80 },
-        { name: 'Data Analysis', level: 80 }
-      ]
+      color: 'from-green-500 to-emerald-500',
+      skills: ['Python ML', 'XGBoost', 'TensorFlow', 'Scikit-learn', 'Data Analysis', 'Neural Networks']
     },
     {
-      title: 'Tools & Technologies',
-      skills: [
-        { name: 'Git & GitHub', level: 85 },
-        { name: 'REST APIs', level: 85 },
-        { name: 'IoT Security', level: 75 },
-        { name: 'Responsive Design', level: 90 }
-      ]
+      title: 'IoT & Security',
+      color: 'from-orange-500 to-red-500',
+      skills: ['IoT Security', 'Intrusion Detection', 'Network Security', 'System Monitoring']
+    },
+    {
+      title: 'Development Tools',
+      color: 'from-indigo-500 to-blue-500',
+      skills: ['Git & GitHub', 'Docker', 'VS Code', 'Postman', 'Linux', 'CI/CD']
+    },
+    {
+      title: 'Soft Skills',
+      color: 'from-yellow-500 to-amber-500',
+      skills: ['Team Leadership', 'Problem Solving', 'Research', 'Technical Writing', 'Agile/Scrum']
     }
   ]
 
   return (
     <section id="skills" className="py-20 px-6">
       <div className="container mx-auto max-w-7xl">
-        <h2 className="section-title text-center mb-12">Skills & Technologies</h2>
+        <h2 className="section-title text-center mb-4">Skills & Expertise</h2>
+        <p className="text-center text-text-secondary text-lg mb-12 max-w-2xl mx-auto">
+          A comprehensive toolkit built through years of hands-on experience in full-stack development, machine learning, and security research
+        </p>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skillCategories.map((category, index) => (
-            <div key={index} className="card">
-              <h3 className="text-2xl font-bold text-midnight-indigo-light mb-6">{category.title}</h3>
-              <div className="space-y-4">
+            <div key={index} className="card group">
+              <div className={`inline-block px-4 py-2 rounded-lg bg-gradient-to-r ${category.color} mb-4`}>
+                <h3 className="text-lg font-bold text-white">{category.title}</h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill, idx) => (
-                  <div key={idx}>
-                    <div className="flex justify-between mb-2">
-                      <span className="text-text-secondary font-medium">{skill.name}</span>
-                      <span className="text-text-tertiary text-sm">{skill.level}%</span>
-                    </div>
-                    <div className="skill-bar">
-                      <div
-                        className="skill-fill"
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
-                    </div>
-                  </div>
+                  <span
+                    key={idx}
+                    className="px-3 py-1.5 bg-midnight-indigo/10 border border-midnight-indigo/30 rounded-md text-sm text-text-secondary hover:bg-midnight-indigo/20 hover:border-midnight-indigo-light transition-all cursor-default"
+                  >
+                    {skill}
+                  </span>
                 ))}
               </div>
             </div>

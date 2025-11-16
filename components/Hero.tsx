@@ -57,18 +57,9 @@ export default function Hero() {
           </div>
 
           <div className="flex flex-wrap justify-center items-center gap-4 mt-12">
-            <div className="relative inline-block">
-              <GlowEffect
-                colors={['#2a5d77', '#3b8fb5', '#5ba8c9', '#7fc4dc']}
-                mode='colorShift'
-                blur='soft'
-                duration={4}
-                scale={0.95}
-              />
-              <a href="#projects" className="btn-primary relative inline-block">
-                View My Work
-              </a>
-            </div>
+            <a href="#projects" className="btn-secondary inline-block">
+              View My Work
+            </a>
             <a 
               href="/cv/Anik_CV.pdf" 
               download="Anik_CV.pdf"

@@ -1,15 +1,15 @@
 export default function About() {
   const whatIDo = [
-    { icon: '🌐', title: 'Full Stack Development', desc: 'Building scalable applications from frontend to backend' },
-    { icon: '🤖', title: 'Machine Learning Research', desc: 'Implementing AI models for practical applications' },
-    { icon: '🔒', title: 'IoT Security', desc: 'Developing intrusion detection systems for industrial environments' },
-    { icon: '📊', title: 'Data Analysis', desc: 'Extracting insights from complex datasets' },
-    { icon: '🎨', title: 'UI/UX Design', desc: 'Creating intuitive and engaging user experiences' },
+    { title: 'Full Stack Development', desc: 'Building scalable applications from frontend to backend' },
+    { title: 'Machine Learning Research', desc: 'Implementing AI models for practical applications' },
+    { title: 'IoT Security', desc: 'Developing intrusion detection systems for industrial environments' },
+    { title: 'Data Analysis', desc: 'Extracting insights from complex datasets' },
+    { title: 'UI/UX Design', desc: 'Creating intuitive and engaging user experiences' },
   ]
 
   const interests = [
-    '🎮 Gaming', '⚽ Football', '💻 Coding', '📚 Reading', 
-    '🌍 Travel', '🤖 AI Collaboration', '🔐 Cyber Security'
+    'Gaming', 'Football', 'Coding', 'Reading', 
+    'Travel', 'AI Collaboration', 'Cyber Security'
   ]
 
   return (
@@ -57,10 +57,9 @@ export default function About() {
           <h3 className="text-3xl font-bold text-midnight-indigo-light mb-8 text-center">What I Do</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {whatIDo.map((item, index) => (
-              <div key={index} className="card text-center">
-                <div className="text-5xl mb-4">{item.icon}</div>
-                <h4 className="text-xl font-semibold text-text-primary mb-2">{item.title}</h4>
-                <p className="text-text-tertiary">{item.desc}</p>
+              <div key={index} className="card">
+                <h4 className="text-xl font-semibold text-text-primary mb-3">{item.title}</h4>
+                <p className="text-text-secondary">{item.desc}</p>
               </div>
             ))}
           </div>
