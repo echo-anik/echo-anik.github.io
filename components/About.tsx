@@ -29,7 +29,7 @@ export default function About() {
           <div className="space-y-6 text-lg text-text-secondary leading-relaxed flex-1">
           <p>
             Hello! I'm <span className="text-midnight-indigo-light font-semibold">Anik</span>, a passionate Full Stack Developer and Machine Learning 
-            Researcher based in Dhaka, Bangladesh. With over 3 years of hands-on experience, 
+            Researcher based in Dhaka, Bangladesh. With over 2 years of hands-on experience, 
             I specialize in building end-to-end web applications that solve real-world 
             problems while implementing cutting-edge AI solutions.
           </p>
