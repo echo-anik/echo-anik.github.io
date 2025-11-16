@@ -1,4 +1,5 @@
 import { FaGithub, FaLinkedin, FaFacebook, FaTwitter, FaEnvelope } from 'react-icons/fa'
+import ContactForm from './ContactForm'
 
 export default function Contact() {
   const socialLinks = [
@@ -98,6 +99,8 @@ export default function Contact() {
             💡 Response time: Usually within 24 hours on weekdays
           </p>
         </div>
+
+        <ContactForm />
 
         <div className="text-center mt-12 text-text-tertiary">
           <p className="mb-2">Currently based in Dhaka, Bangladesh 🇧🇩</p>

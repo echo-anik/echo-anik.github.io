@@ -22,6 +22,21 @@ export default function CrystalBackground() {
                       radial-gradient(160% 130% at 90% 90%, rgba(0,0,0,0) 38%, #000309 76%, #000208 100%);
         }
 
+        /* Mouse hover lighting effect for dark theme */
+        [data-theme="dark"] .theme-bg::after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(circle 400px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(42, 93, 119, 0.35) 0%, rgba(24, 64, 88, 0.2) 30%, transparent 60%);
+          pointer-events: none;
+          opacity: 0;
+          transition: opacity 0.4s ease;
+        }
+
+        [data-theme="dark"] .theme-bg:hover::after {
+          opacity: 1;
+        }
+
         /* Light theme background (crystal maze - bright and airy) */
         [data-theme="light"] .theme-bg {
           background: 
@@ -59,6 +74,20 @@ export default function CrystalBackground() {
             );
           background-blend-mode: overlay, overlay, normal, screen, screen;
           animation: crystal-shimmer 15s ease-in-out infinite;
+        }
+        /* Mouse hover lighting effect for light theme */
+        [data-theme="light"] .theme-bg::after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(circle 500px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(14, 165, 233, 0.15) 0%, rgba(125, 211, 252, 0.08) 40%, transparent 70%);
+          pointer-events: none;
+          opacity: 0;
+          transition: opacity 0.4s ease;
+        }
+
+        [data-theme="light"] .theme-bg:hover::after {
+          opacity: 1;
         }
       `}</style>
       

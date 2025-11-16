@@ -144,6 +144,33 @@
     box-shadow: 0 10px 30px rgba(14, 165, 233, 0.15);
   }
 
+  /* Form input styles for both themes */
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    transition: all 0.3s ease;
+  }
+
+  [data-theme="light"] input[type="text"],
+  [data-theme="light"] input[type="email"],
+  [data-theme="light"] textarea {
+    background: rgba(240, 249, 255, 0.5) !important;
+    border-color: rgba(14, 165, 233, 0.3) !important;
+    color: #0c4a6e !important;
+  }
+
+  [data-theme="light"] input::placeholder,
+  [data-theme="light"] textarea::placeholder {
+    color: #0369a1 !important;
+    opacity: 0.6;
+  }
+
+  [data-theme="light"] input:focus,
+  [data-theme="light"] textarea:focus {
+    border-color: #0ea5e9 !important;
+    background: rgba(255, 255, 255, 0.8) !important;
+  }
+
   .card::before {
     content: '';
     position: absolute;
