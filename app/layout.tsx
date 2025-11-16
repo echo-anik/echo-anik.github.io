@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import MouseTracker from '@/components/MouseTracker'
+import CrystalBackground from '@/components/CrystalBackground'
+import ThemeToggle from '@/components/ThemeToggle'
 
 export const metadata: Metadata = {
   title: 'Khandoker Wahiduzzaman Anik - Full Stack Developer & ML Researcher',
@@ -20,9 +22,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className="midnight-bg">
+    <html lang="en" data-theme="dark">
+      <body className="transition-colors duration-500">
+        <CrystalBackground />
         <MouseTracker />
+        <ThemeToggle />
         {children}
       </body>
     </html>

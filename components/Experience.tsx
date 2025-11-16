@@ -44,7 +44,7 @@ export default function Experience() {
                 <div className="mt-4">
                   <h4 className="text-sm font-semibold text-text-tertiary mb-2">Technologies:</h4>
                   <div className="flex flex-wrap gap-2">
-                    {['Angular', 'React', 'Laravel', 'Node.js', 'MySQL', 'MongoDB'].map((tech) => (
+                    {['React', 'Laravel', 'Node.js', 'MySQL', 'MongoDB'].map((tech) => (
                       <span
                         key={tech}
                         className="px-3 py-1 bg-midnight-indigo/10 border border-midnight-indigo/30 rounded text-xs text-text-secondary"

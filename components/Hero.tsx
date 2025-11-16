@@ -6,7 +6,7 @@ import { GlowEffect } from '@/components/core/glow-effect'
 
 export default function Hero() {
   const techStack = [
-    'PHP', 'Laravel', 'Node.js', 'Python', 'Angular', 'React', 
+    'PHP', 'Laravel', 'Node.js', 'Python', 'React', 
     'MongoDB', 'MySQL', 'Machine Learning', 'XGBoost', 'TensorFlow', 'IoT Security'
   ]
 

@@ -9,7 +9,6 @@ export default function Skills() {
         { name: 'PHP', level: 90 },
         { name: 'JavaScript', level: 80 },
         { name: 'Node.js', level: 80 },
-        { name: 'Java', level: 70 },
         { name: 'C', level: 65 }
       ]
     },
@@ -17,9 +16,7 @@ export default function Skills() {
       title: 'Frameworks & Libraries',
       skills: [
         { name: 'Laravel', level: 90 },
-        { name: 'Angular', level: 80 },
         { name: 'React', level: 70 },
-        { name: 'Django', level: 70 },
         { name: 'Bootstrap', level: 85 },
         { name: 'Tailwind CSS', level: 85 }
       ]
