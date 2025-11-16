@@ -11,7 +11,7 @@ export default function AdminMessages() {
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
 
-  const ADMIN_PASSWORD = 'admin123' // Change this to your preferred password
+  const ADMIN_PASSWORD = 'Plusmodiumx@1' // Change this to your preferred password
 
   useEffect(() => {
     if (isAuthenticated) {
@@ -87,7 +87,7 @@ export default function AdminMessages() {
             </button>
           </form>
           <p className="text-text-tertiary text-sm text-center mt-4">
-            Default password: admin123
+            Default password: MIC
           </p>
         </div>
       </div>
