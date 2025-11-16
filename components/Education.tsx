@@ -90,7 +90,7 @@ export default function Education() {
 
               <div>
                 <h4 className="text-lg font-semibold text-text-primary mb-1">Inter-University Robotics Competition</h4>
-                <p className="text-text-tertiary text-sm mb-2">2020</p>
+                <p className="text-text-tertiary text-sm mb-2">2023</p>
                 <p className="text-text-secondary">Team participant in robotics design and programming</p>
               </div>
             </div>
